@@ -16,11 +16,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// insert collection or collection route (shouldnt end with document)
+const COLLECTION = "categorys/burgers/products"; // <--------EDIT
+
 export async function getData() {
-  // insert collection or collection route (shouldnt end with document)
-  const querySnapshot = await getDocs(
-    collection(db, "categorys/burgers/products")
-  );
+  const querySnapshot = await getDocs(collection(db, COLLECTION));
   let data = [];
   querySnapshot.forEach((doc) => {
     data = [
