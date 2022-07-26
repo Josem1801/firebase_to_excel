@@ -16,8 +16,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Get a list of cities from your database
 export async function getData() {
+  // insert collection or collection route (shouldnt end with document)
   const querySnapshot = await getDocs(
     collection(db, "categorys/burgers/products")
   );
